@@ -1,23 +1,30 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-        <link rel="stylesheet" type="text/css" href="main.css">
+    <link rel="stylesheet" type="text/css" href="main.css">
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.2/css/materialize.min.css">
     <title>Hangman</title>
 </head>
+
 <body>
-    <h1>Welcome to Hangman</h1>
-    <h4>It's high noon and you've been chosen by Death. But Death is feeling generous today. 
-        <br />
-    </h4>
-    <h5>He strikes up a deal. You have six chances to guess a word to save your life. Letter by letter. Will you live to see another day or will you find yourself in endless darkness in the arms of Death himself?</h5>
+    <header class="center">
+        <h1>Welcome to Hangman</h1>
+        <h4>It's high noon and you've been chosen by Death. But Death is feeling generous today.
+            <br />
+        </h4>
+        <h5>He strikes up a deal. You have six chances to guess a word to save your life. Letter by letter. Will you live to
+            see another day or will you find yourself in endless darkness in the arms of Death himself?</h5>
+    </header>
 
-    <div class="life-total">
+    <nav class="center">
+        <div class="life-total">
 
-    </div>
+        </div>
+    </nav>
 
     <div class="letters-container">
 
@@ -26,11 +33,14 @@
     <div class="answer-field">
 
     </div>
+    <div class="reset-btn center">
+        <button class="reset btn red">reset</button>
+    </div>
 
-    <button class="reset btn red">reset</button>
-
-    <script src="http://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="crossorigin="anonymous"></script>
+    <script src="http://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
+        crossorigin="anonymous"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.2/js/materialize.min.js"></script>
     <script src="app.js"></script>
 </body>
+
 </html>
