@@ -15,7 +15,7 @@
 const secretWords = ["banana", "frog", "bazooka"]
 let getRandomWord = secretWords[Math.floor(Math.random() * secretWords.length)]
 console.log(getRandomWord)
-
+let lives = 6
 
 let alphabet = "abcdefghijklmnopqrstuvwxyz"
 
@@ -52,3 +52,16 @@ let answerSection = function () {
 }
 
 answerSection()
+
+
+
+//track life
+let lifeTracker = function(){
+$('.life-total').append(`${lives} lives remaining`)
+$('.btn').on('click', function(){
+    lives -= 1
+    $('.life-total').html(`${lives} lives remaining`)
+})
+}
+
+lifeTracker()
