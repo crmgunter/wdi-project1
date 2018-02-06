@@ -26,7 +26,7 @@ console.log(alphabetArray)
 
 //prints random word into array
 randomWordArray = []
-    console.log(randomWordArray)
+console.log(randomWordArray)
 
 //split alphabet string and push to alphabet array
 let splitAlphabet = function (letters) {
@@ -37,15 +37,27 @@ let splitAlphabet = function (letters) {
 }
 splitAlphabet(alphabet)
 
-
-//split the random word into letters
-let splitRandomWord = function (words) {
-    for (let i = 0; i < words.length; i++) {
-        console.log(words[i])
-        randomWordArray.push(words[i])
+let compareValues = function(val){
+    let splitWord = getRandomWord.split('')
+    for (let i = 0; i < splitWord.length; i++){
+        if(val === splitWord[i]){
+            console.log("match")
+        }
     }
 }
-splitRandomWord(getRandomWord)
+
+
+
+//split the random word into letters
+//not sure if needed at all
+
+// let splitRandomWord = function (words) {
+//     for (let i = 0; i < words.length; i++) {
+//         console.log(words[i])
+//         randomWordArray.push(words[i])
+//     }
+// }
+// splitRandomWord(getRandomWord)
 
 
 
@@ -88,14 +100,19 @@ let matchLetters = function (letters, word) {
 matchLetters(alphabet, getRandomWord)
 
 
-
-
-
 //this is how to disable a button on click by class
 // now fucking figure out how to do it for all 26 letters with a for loop
+
 $('.a').on('click', function () {
     $('.a').addClass('disabled')
-})
+    let check = getRandomWord.indexOf('a')
+    console.log(check)
+    if (check !== -1){
+        console.log("winner")
+    } else {
+        console.log("lose life")
+    }
+    })
 $('.b').on('click', function () {
     $('.b').addClass('disabled')
 })
@@ -107,6 +124,8 @@ $('.d').on('click', function () {
 })
 $('.e').on('click', function () {
     $('.e').addClass('disabled')
+    let shit = getRandomWord.indexOf('e')
+    console.log(shit)
 })
 $('.f').on('click', function () {
     $('.f').addClass('disabled')
