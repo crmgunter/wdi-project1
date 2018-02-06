@@ -32,20 +32,19 @@ console.log(randomWordArray)
 let splitAlphabet = function (letters) {
     for (let i = 0; i < letters.length; i++) {
         alphabetArray.push(letters[i])
-        $('.letters-container').append(`<button class="btn btn-disabled ${letters[i]} red button-style">${letters[i]}</button>`)
+        $('.letters-container').append(`<button id="${letters[i]}" class="btn btn-disabled red button-style">${letters[i]}</button>`)
     }
 }
 splitAlphabet(alphabet)
 
-let compareValues = function(val){
-    let splitWord = getRandomWord.split('')
-    for (let i = 0; i < splitWord.length; i++){
-        if(val === splitWord[i]){
-            console.log("match")
-        }
-    }
+function checker(anything){
+console.log(anything)
 }
-
+$(".btn").click(function(catfood){
+    let value = catfood.target.id
+    checker(value)
+    $(`#${value}`).attr('disabled', true)
+})
 
 
 //split the random word into letters
@@ -103,93 +102,86 @@ matchLetters(alphabet, getRandomWord)
 //this is how to disable a button on click by class
 // now fucking figure out how to do it for all 26 letters with a for loop
 
-$('.a').on('click', function () {
-    $('.a').addClass('disabled')
-    let check = getRandomWord.indexOf('a')
-    console.log(check)
-    if (check !== -1){
-        console.log("winner")
-    } else {
-        console.log("lose life")
-    }
-    })
-$('.b').on('click', function () {
-    $('.b').addClass('disabled')
-})
-$('.c').on('click', function () {
-    $('.c').addClass('disabled')
-})
-$('.d').on('click', function () {
-    $('.d').addClass('disabled')
-})
-$('.e').on('click', function () {
-    $('.e').addClass('disabled')
-    let shit = getRandomWord.indexOf('e')
-    console.log(shit)
-})
-$('.f').on('click', function () {
-    $('.f').addClass('disabled')
-})
-$('.g').on('click', function () {
-    $('.g').addClass('disabled')
-})
-$('.h').on('click', function () {
-    $('.h').addClass('disabled')
-})
-$('.i').on('click', function () {
-    $('.i').addClass('disabled')
-})
-$('.j').on('click', function () {
-    $('.j').addClass('disabled')
-})
-$('.k').on('click', function () {
-    $('.k').addClass('disabled')
-})
-$('.l').on('click', function () {
-    $('.l').addClass('disabled')
-})
-$('.m').on('click', function () {
-    $('.m').addClass('disabled')
-})
-$('.n').on('click', function () {
-    $('.n').addClass('disabled')
-})
-$('.o').on('click', function () {
-    $('.o').addClass('disabled')
-})
-$('.p').on('click', function () {
-    $('.p').addClass('disabled')
-})
-$('.q').on('click', function () {
-    $('.q').addClass('disabled')
-})
-$('.r').on('click', function () {
-    $('.r').addClass('disabled')
-})
-$('.s').on('click', function () {
-    $('.s').addClass('disabled')
-})
-$('.t').on('click', function () {
-    $('.t').addClass('disabled')
-})
-$('.u').on('click', function () {
-    $('.u').addClass('disabled')
-})
-$('.v').on('click', function () {
-    $('.v').addClass('disabled')
-})
-$('.w').on('click', function () {
-    $('.w').addClass('disabled')
-})
-$('.x').on('click', function () {
-    $('.x').addClass('disabled')
-})
-$('.y').on('click', function () {
-    $('.y').addClass('disabled')
-})
-$('.z').on('click', function () {
-    $('.z').addClass('disabled')
-})
+// $('.a').on('click', function () {
+//     $('.a').addClass('disabled')
+//     })
+// $('.b').on('click', function () {
+//     $('.b').addClass('disabled')
+// })
+// $('.c').on('click', function () {
+//     $('.c').addClass('disabled')
+// })
+// $('.d').on('click', function () {
+//     $('.d').addClass('disabled')
+// })
+// $('.e').on('click', function () {
+//     $('.e').addClass('disabled')
+//     let shit = getRandomWord.indexOf('e')
+//     console.log(shit)
+// })
+// $('.f').on('click', function () {
+//     $('.f').addClass('disabled')
+// })
+// $('.g').on('click', function () {
+//     $('.g').addClass('disabled')
+// })
+// $('.h').on('click', function () {
+//     $('.h').addClass('disabled')
+// })
+// $('.i').on('click', function () {
+//     $('.i').addClass('disabled')
+// })
+// $('.j').on('click', function () {
+//     $('.j').addClass('disabled')
+// })
+// $('.k').on('click', function () {
+//     $('.k').addClass('disabled')
+// })
+// $('.l').on('click', function () {
+//     $('.l').addClass('disabled')
+// })
+// $('.m').on('click', function () {
+//     $('.m').addClass('disabled')
+// })
+// $('.n').on('click', function () {
+//     $('.n').addClass('disabled')
+// })
+// $('.o').on('click', function () {
+//     $('.o').addClass('disabled')
+// })
+// $('.p').on('click', function () {
+//     $('.p').addClass('disabled')
+// })
+// $('.q').on('click', function () {
+//     $('.q').addClass('disabled')
+// })
+// $('.r').on('click', function () {
+//     $('.r').addClass('disabled')
+// })
+// $('.s').on('click', function () {
+//     $('.s').addClass('disabled')
+// })
+// $('.t').on('click', function () {
+//     $('.t').addClass('disabled')
+// })
+// $('.u').on('click', function () {
+//     $('.u').addClass('disabled')
+// })
+// $('.v').on('click', function () {
+//     $('.v').addClass('disabled')
+// })
+// $('.w').on('click', function () {
+//     $('.w').addClass('disabled')
+// })
+// $('.x').on('click', function () {
+//     $('.x').addClass('disabled')
+// })
+// $('.y').on('click', function () {
+//     $('.y').addClass('disabled')
+// })
+// $('.z').on('click', function () {
+//     $('.z').addClass('disabled')
+// })
 
 
 //reset button
