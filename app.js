@@ -56,12 +56,18 @@ answerSection()
 
 
 //track life
+//when a button is clicked, subtract one life
+//when lives is less than one, alert "you lose" and buttons are disabled
 let lifeTracker = function(){
 $('.life-total').append(`${lives} lives remaining`)
 $('.btn').on('click', function(){
     lives -= 1
     $('.life-total').html(`${lives} lives remaining`)
+    if (lives < 1){
+        alert("you lose")
+        $('button').addClass('disabled')
+    }
 })
 }
-
 lifeTracker()
+
