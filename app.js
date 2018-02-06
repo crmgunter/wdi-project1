@@ -12,11 +12,11 @@
 
 
 //words to be guessed by user
-const secretWords = ["banana", "frog", "bazooka"]
+const secretWords = ["banana", "frog", "bazooka", "boomerang", "seashells", "boobies", "mailbox", "yesterday"]
 let getRandomWord = secretWords[Math.floor(Math.random() * secretWords.length)]
 console.log(getRandomWord)
-let lives = 6
 
+let lives = 6
 let alphabet = "abcdefghijklmnopqrstuvwxyz"
 
 
@@ -27,7 +27,7 @@ let splitAlphabet = function (letters){
     for(let i = 0; i < letters.length; i++){
         alphabetArray.push(letters[i])
         let toButtonForm = letters[i]
-        $('.letters-container').append(`<button class="btn red button-style">${toButtonForm}</button>`)
+        $('.letters-container').append(`<button class="btn ${letters[i]} red button-style">${toButtonForm}</button>`)
     }
 }
 splitAlphabet(alphabet)
@@ -71,3 +71,14 @@ $('.btn').on('click', function(){
 }
 lifeTracker()
 
+// disables button when clicked
+const buttonDisable = function (){
+
+}
+
+
+//this is how to disable a button on click by class
+// now fucking figure out how to do it for all 26 letters with a for loop
+$('.a').on('click', function(){
+    $('.a').addClass('disabled')
+})
