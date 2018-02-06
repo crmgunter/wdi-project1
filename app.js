@@ -19,7 +19,6 @@ console.log(getRandomWord)
 let lives = 6
 let alphabet = "abcdefghijklmnopqrstuvwxyz"
 
-
 //split alphabet string and push to alphabet array
 let splitAlphabet = function (letters){
     let alphabetArray = []
@@ -27,7 +26,7 @@ let splitAlphabet = function (letters){
     for(let i = 0; i < letters.length; i++){
         alphabetArray.push(letters[i])
         let toButtonForm = letters[i]
-        $('.letters-container').append(`<button class="btn ${letters[i]} red button-style">${toButtonForm}</button>`)
+        let pushClassOut = $('.letters-container').append(`<button class="btn btn-disabled ${letters[i]} red button-style">${toButtonForm}</button>`)
     }
 }
 splitAlphabet(alphabet)
@@ -60,21 +59,17 @@ answerSection()
 //when lives is less than one, alert "you lose" and buttons are disabled
 let lifeTracker = function(){
 $('.life-total').append(`${lives} lives remaining`)
-$('.btn').on('click', function(){
+$('.btn-disabled').on('click', function(){
     lives -= 1
     $('.life-total').html(`${lives} lives remaining`)
     if (lives < 1){
         alert("you lose")
-        $('button').addClass('disabled')
+        $('.btn-disabled').addClass('disabled')
     }
 })
 }
 lifeTracker()
 
-// disables button when clicked
-const buttonDisable = function (){
-
-}
 
 
 //this is how to disable a button on click by class
@@ -82,3 +77,87 @@ const buttonDisable = function (){
 $('.a').on('click', function(){
     $('.a').addClass('disabled')
 })
+$('.b').on('click', function(){
+    $('.b').addClass('disabled')
+})
+$('.c').on('click', function(){
+    $('.c').addClass('disabled')
+})
+$('.d').on('click', function(){
+    $('.d').addClass('disabled')
+})
+$('.e').on('click', function(){
+    $('.e').addClass('disabled')
+})
+$('.f').on('click', function(){
+    $('.f').addClass('disabled')
+})
+$('.g').on('click', function(){
+    $('.g').addClass('disabled')
+})
+$('.h').on('click', function(){
+    $('.h').addClass('disabled')
+})
+$('.i').on('click', function(){
+    $('.i').addClass('disabled')
+})
+$('.j').on('click', function(){
+    $('.j').addClass('disabled')
+})
+$('.k').on('click', function(){
+    $('.k').addClass('disabled')
+})
+$('.l').on('click', function(){
+    $('.l').addClass('disabled')
+})
+$('.m').on('click', function(){
+    $('.m').addClass('disabled')
+})
+$('.n').on('click', function(){
+    $('.n').addClass('disabled')
+})
+$('.o').on('click', function(){
+    $('.o').addClass('disabled')
+})
+$('.p').on('click', function(){
+    $('.p').addClass('disabled')
+})
+$('.q').on('click', function(){
+    $('.q').addClass('disabled')
+})
+$('.r').on('click', function(){
+    $('.r').addClass('disabled')
+})
+$('.s').on('click', function(){
+    $('.s').addClass('disabled')
+})
+$('.t').on('click', function(){
+    $('.t').addClass('disabled')
+})
+$('.u').on('click', function(){
+    $('.u').addClass('disabled')
+})
+$('.v').on('click', function(){
+    $('.v').addClass('disabled')
+})
+$('.w').on('click', function(){
+    $('.w').addClass('disabled')
+})
+$('.x').on('click', function(){
+    $('.x').addClass('disabled')
+})
+$('.y').on('click', function(){
+    $('.y').addClass('disabled')
+})
+$('.z').on('click', function(){
+    $('.z').addClass('disabled')
+})
+
+
+//reset button
+const resetGame = function(){
+}
+resetGame()
+
+//where i left off: buttons need troubleshooting
+//reset button does nothing when clicked
