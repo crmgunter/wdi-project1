@@ -1,3 +1,22 @@
 body {
     background-color: blue;
 }
+
+.button-style {
+    text-align: center;
+}
+
+.letters-container {
+    text-align: center;
+}
+
+.answer-field {
+    text-align: center;
+    margin: 20px;
+    font-size: 50px;
+    opacity: 
+}
+
+.btn {
+    margin: 10px 10px;
+}
