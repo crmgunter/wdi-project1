@@ -82,11 +82,8 @@ function lifeTracker(shitBalls) {
     if (wrongGuess === getRandomWord.length){
         lives--
         $('.life-total').html(`You have ${lives} lives left.`)
-    } else {
-        $('.life-total').html(`You have ${lives} lives left.`)
-    }
-
-
+    } 
+    
     if (lives < 1){
         $('.life-total').html("Game over")
         $('.alpha').addClass('disabled')
