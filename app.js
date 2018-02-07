@@ -71,18 +71,28 @@ function checker(anything){
 //change shitBalls to something else
 function lifeTracker(shitBalls) {
     $('.life-total').html(`You have ${lives} lives left.`)
+    let wrongGuess = 0
+    for (let i = 0; i < getRandomWord.length; i++){
+        if (shitBalls !== getRandomWord[i]){
+            wrongGuess++
+            console.log(wrongGuess)
+        }
+    }
+    if (wrongGuess === getRandomWord.length){
+        lives--
+        $('.life-total').html(`You have ${lives} lives left.`)
+        console.log(lives)
+    } else {
+        $('.life-total').html(`You have ${lives} lives left.`)
+    }
+
     if (lives < 1){
         $('.life-total').html("Game over")
         $('.btn').addClass('disabled')
     }
-    for (let i = 0; i < getRandomWord.length; i++){
-        console.log(getRandomWord[i])
-    }
-    if (shitBalls !== getRandomWord[i]){
-        lives -= 1
-    } else {
-        lives +=1
-    }
+    // if (shitBalls !== getRandomWord[i]){
+    //     $('.life-total').html(`You have ${lives -= 1} lives left`)
+    // } 
 
 }
 //=========================================================
