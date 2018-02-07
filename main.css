@@ -1,10 +1,17 @@
-body {
-    background-color: rgb(175, 120, 18);
+body{
     min-height: 100vh;
+    background-color: rgb(74, 161, 236)
+}
+
+header {
+    color: aliceblue;
+    font-family: 'Nanum Myeongjo', serif;
+
 }
 
 .button-style {
     text-align: center;
+    opacity: .8;
 }
 
 .letters-container {

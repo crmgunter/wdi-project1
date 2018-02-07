@@ -1,3 +1,10 @@
+//=========================================================
+//parallax
+$(document).ready(function(){
+    $('.parallax').parallax();
+  });
+
+
 //words to be guessed by user
 //=========================================================
 const secretWords = ["banana", "frog", "bazooka", "boomerang", "seashells", "cheese", "octopus", "spade", "mailbox", "yesterday", "leader", "pompous", "friendly", "jello", "personalize"]
@@ -25,7 +32,7 @@ console.log(randomWordArray)
 }
 
 $('.answer-field').html(underscores.join(" "))
-$('.reset-btn').append(`<button class="btn reset red">Retry?</button>`)
+$('.reset-btn').append(`<button class="btn reset black button-style">Retry?</button>`)
 
 
 //=========================================================
@@ -33,7 +40,7 @@ $('.reset-btn').append(`<button class="btn reset red">Retry?</button>`)
 let splitAlphabet = function (letters) {
     for (let i = 0; i < letters.length; i++) {
         alphabetArray.push(letters[i])
-        $('.letters-container').append(`<button id="${letters[i]}" class="btn alpha btn-disabled transparent button-style">${letters[i]}</button>`)
+        $('.letters-container').append(`<button id="${letters[i]}" class="btn alpha btn-disabled black button-style">${letters[i]}</button>`)
     }
 }
 splitAlphabet(alphabet)
