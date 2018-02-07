@@ -38,6 +38,7 @@ console.log(randomWordArray)
 
 $('.answer-field').html(underscores.join(" "))
 
+
 //=========================================================
 //split alphabet string and push to alphabet array
 let splitAlphabet = function (letters) {
@@ -50,18 +51,48 @@ splitAlphabet(alphabet)
 
 //=========================================================
 //function to compare clicked button to random word
+//.split function can be muthafuckin removed
 function checker(anything){
     let checkRandomWord = getRandomWord.split('')
     console.log(checkRandomWord)
     for (let i = 0; i < checkRandomWord.length; i++){
-        console.log(checkRandomWord[i])
         if(anything === checkRandomWord[i]){
-            console.log('yay')
-        } else {
-            console.log("nope")
+            underscores[i]= anything
+            $('.answer-field').html(underscores.join(" "))
         }
     }
 }
+
+
+
+//=========================================================
+//life tracker function
+function lifeTracker(shitBalls) {
+    $('.life-total').html(`You have ${lives} lives left.`)
+    if (lives < 1){
+        $('.life-total').html("Game over")
+        $('.btn').addClass('disabled')
+    }
+    for (let i = 0; i < getRandomWord.length; i++){
+        console.log(getRandomWord[i])
+    }
+
+}
+//=========================================================
+//this function gets the number of indexes for each letter
+//may be completely unnecessary
+// let matchLetters = function (letters, word) {
+//     for (i = 0; i < letters.length; i++) {
+//         let count = 0
+//         let eachIndex = word.indexOf(letters[i])
+//         while (eachIndex !== -1) {
+//             count++
+//             eachIndex = word.indexOf(letters[i], eachIndex + 1)
+//         }
+//         console.log(count)
+//     }
+// }
+
 
 //=========================================================
 //this get the id of the button on click
@@ -69,25 +100,11 @@ function checker(anything){
 $(".btn").click(function(catfood){
     let value = catfood.target.id
     checker(value)
-    matchLetters(value, getRandomWord)
+    lifeTracker(value)
+    // matchLetters(value, getRandomWord)
     console.log(value)
     $(`#${value}`).attr('disabled', true)
 })
-
-//=========================================================
-//this function gets the number of indexes for each letter
-//may be completely unnecessary
-let matchLetters = function (letters, word) {
-    for (i = 0; i < letters.length; i++) {
-        let count = 0
-        let eachIndex = word.indexOf(letters[i])
-        while (eachIndex !== -1) {
-            count++
-            eachIndex = word.indexOf(letters[i], eachIndex + 1)
-        }
-        console.log(count)
-    }
-}
 
 
 //=========================================================
@@ -104,25 +121,6 @@ splitRandomWord(getRandomWord)
 
 
 
-
-
-
-//=========================================================
-// track life
-// when a button is clicked, subtract one life
-// when lives is less than one, alert "you lose" and buttons are disabled
-// let lifeTracker = function () {
-//     $('.life-total').append(`${lives} lives remaining`)
-//     $('.btn-disabled').on('click', function () {
-//         lives -= 1
-//         $('.life-total').html(`${lives} lives remaining`)
-//         if (lives < 1) {
-//             alert("you lose")
-//             $('.btn-disabled').addClass('disabled')
-//         }
-//     })
-// }
-// lifeTracker()
 
 
 
