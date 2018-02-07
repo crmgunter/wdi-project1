@@ -31,15 +31,12 @@ console.log(randomWordArray)
 
 //=========================================================
 //function that subs underscores for letters
-let createUnderscores = function (){
     let underscores = []
     for (i = 0; i < getRandomWord.length; i++){
-        underscores.push('_')
-    }
-    return underscores
+        underscores[i] = "_"
 }
-console.log(createUnderscores())
-$('.answer-field').append(`${createUnderscores()}`)
+
+$('.answer-field').html(underscores.join(" "))
 
 //=========================================================
 //split alphabet string and push to alphabet array
