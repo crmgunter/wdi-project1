@@ -1,16 +1,3 @@
-//======get random word========
-//if "A" is picked, search word for "A"
-// if word contains "A", fill in "A" in all spots it belongs
-// else, subtract a life and add parts to hangman
-// same for all letters
-
-//===when button is clicked, disable button====
-//button click = 1 try
-
-//when word is filled in completely, notify user of win
-//when run out of tries, you lose
-
-
 //words to be guessed by user
 //=========================================================
 const secretWords = ["banana", "frog", "bazooka", "boomerang", "seashells", "cheese", "octopus", "spade", "mailbox", "yesterday", "leader", "pompous", "friendly", "jello", "personalize"]
@@ -46,7 +33,7 @@ $('.reset-btn').append(`<button class="btn reset red">Retry?</button>`)
 let splitAlphabet = function (letters) {
     for (let i = 0; i < letters.length; i++) {
         alphabetArray.push(letters[i])
-        $('.letters-container').append(`<button id="${letters[i]}" class="btn alpha btn-disabled red button-style">${letters[i]}</button>`)
+        $('.letters-container').append(`<button id="${letters[i]}" class="btn alpha btn-disabled transparent button-style">${letters[i]}</button>`)
     }
 }
 splitAlphabet(alphabet)
@@ -55,12 +42,14 @@ splitAlphabet(alphabet)
 //function to compare clicked button to random word
 //.split function can be muthafuckin removed
 function checker(anything){
+    let rightGuess = 0
     let checkRandomWord = getRandomWord.split('')
     console.log(checkRandomWord)
     for (let i = 0; i < checkRandomWord.length; i++){
         if(anything === checkRandomWord[i]){
             underscores[i]= anything
             $('.answer-field').html(underscores.join(" "))
+            randomWordArray.push(underscores[i])
         }
     }
 }
@@ -73,10 +62,10 @@ function checker(anything){
 function lifeTracker(shitBalls) {
     $('.life-total').html(`You have ${lives} lives left.`)
     let wrongGuess = 0
+    let rightGuess = 0
     for (let i = 0; i < getRandomWord.length; i++){
         if (shitBalls !== getRandomWord[i]){
             wrongGuess++
-            console.log(wrongGuess)
         }
     }
     if (wrongGuess === getRandomWord.length){
@@ -84,15 +73,15 @@ function lifeTracker(shitBalls) {
         $('.life-total').html(`You have ${lives} lives left.`)
     } 
     
+    if(randomWordArray.length === getRandomWord.length){
+        $('.life-total').html("You fucking win!")
+    }
+
     if (lives < 1){
         $('.life-total').html("Game over")
         $('.alpha').addClass('disabled')
         $('.answer-field').html(getRandomWord)
     }
-    // if (shitBalls !== getRandomWord[i]){
-    //     $('.life-total').html(`You have ${lives -= 1} lives left`)
-    // } 
-
 }
 //=========================================================
 //this function gets the number of indexes for each letter
