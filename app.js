@@ -20,6 +20,7 @@ console.log(getRandomWord)
 // let printRandomWord = $('.answer-field').html(`${getRandomWord}`)
 
 let lives = 6
+$('.life-total').html(`You have ${lives} lives left.`)
 let alphabet = "abcdefghijklmnopqrstuvwxyz"
 //prints alphabet string into an array
 let alphabetArray = []
@@ -67,6 +68,7 @@ function checker(anything){
 
 //=========================================================
 //life tracker function
+//change shitBalls to something else
 function lifeTracker(shitBalls) {
     $('.life-total').html(`You have ${lives} lives left.`)
     if (lives < 1){
@@ -75,6 +77,11 @@ function lifeTracker(shitBalls) {
     }
     for (let i = 0; i < getRandomWord.length; i++){
         console.log(getRandomWord[i])
+    }
+    if (shitBalls !== getRandomWord[i]){
+        lives -= 1
+    } else {
+        lives +=1
     }
 
 }
