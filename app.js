@@ -38,6 +38,7 @@ console.log(randomWordArray)
 }
 
 $('.answer-field').html(underscores.join(" "))
+$('.reset-btn').append(`<button class="btn reset red">Retry?</button>`)
 
 
 //=========================================================
@@ -45,7 +46,7 @@ $('.answer-field').html(underscores.join(" "))
 let splitAlphabet = function (letters) {
     for (let i = 0; i < letters.length; i++) {
         alphabetArray.push(letters[i])
-        $('.letters-container').append(`<button id="${letters[i]}" class="btn btn-disabled red button-style">${letters[i]}</button>`)
+        $('.letters-container').append(`<button id="${letters[i]}" class="btn alpha btn-disabled red button-style">${letters[i]}</button>`)
     }
 }
 splitAlphabet(alphabet)
@@ -81,14 +82,15 @@ function lifeTracker(shitBalls) {
     if (wrongGuess === getRandomWord.length){
         lives--
         $('.life-total').html(`You have ${lives} lives left.`)
-        console.log(lives)
     } else {
         $('.life-total').html(`You have ${lives} lives left.`)
     }
 
+
     if (lives < 1){
         $('.life-total').html("Game over")
-        $('.btn').addClass('disabled')
+        $('.alpha').addClass('disabled')
+        $('.answer-field').html(getRandomWord)
     }
     // if (shitBalls !== getRandomWord[i]){
     //     $('.life-total').html(`You have ${lives -= 1} lives left`)
@@ -114,7 +116,7 @@ function lifeTracker(shitBalls) {
 //=========================================================
 //this get the id of the button on click
 //thank you james, you sweet hunk
-$(".btn").click(function(catfood){
+$(".alpha").click(function(catfood){
     let value = catfood.target.id
     checker(value)
     lifeTracker(value)
@@ -122,19 +124,20 @@ $(".btn").click(function(catfood){
     console.log(value)
     $(`#${value}`).attr('disabled', true)
 })
-
+$('.reset').on('click', function(){
+    location.reload()
+})
 
 //=========================================================
 //split the random word into letters
 //not sure if needed at all
 
-let splitRandomWord = function (words) {
-    for (let i = 0; i < words.length; i++) {
-        randomWordArray.push(words[i])
-    }
-}
-splitRandomWord(getRandomWord)
-
+// let splitRandomWord = function (words) {
+//     for (let i = 0; i < words.length; i++) {
+//         randomWordArray.push(words[i])
+//     }
+// }
+// splitRandomWord(getRandomWord)
 
 
 
@@ -142,10 +145,10 @@ splitRandomWord(getRandomWord)
 
 
 //=========================================================
-// //reset button
-// const resetGame = function () {
-// }
-// resetGame()
+//reset button
+const resetGame = function () {
+}
+resetGame()
 
 //where i left off: buttons need troubleshooting
 //reset button does nothing when clicked
