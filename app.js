@@ -12,11 +12,12 @@
 
 
 //words to be guessed by user
-const secretWords = ["banana", "frog", "bazooka", "boomerang", "seashells", "cheese", "abcdefghijklmnopqrstuvwxyz", "mailbox", "yesterday", "leader", "pompous", "friendly", "jello", "personalize"]
+//=========================================================
+const secretWords = ["banana", "frog", "bazooka", "boomerang", "seashells", "cheese", "octopus", "spade", "mailbox", "yesterday", "leader", "pompous", "friendly", "jello", "personalize"]
 let getRandomWord = secretWords[Math.floor(Math.random() * secretWords.length)]
 console.log(getRandomWord)
 // answer section with spaces for blank letters
-let printRandomWord = $('.answer-field').html(`${getRandomWord}`)
+// let printRandomWord = $('.answer-field').html(`${getRandomWord}`)
 
 let lives = 6
 let alphabet = "abcdefghijklmnopqrstuvwxyz"
@@ -25,9 +26,22 @@ let alphabetArray = []
 console.log(alphabetArray)
 
 //prints random word into array
-randomWordArray = []
+let randomWordArray = []
 console.log(randomWordArray)
 
+//=========================================================
+//function that subs underscores for letters
+let createUnderscores = function (){
+    let underscores = []
+    for (i = 0; i < getRandomWord.length; i++){
+        underscores.push('_')
+    }
+    return underscores
+}
+console.log(createUnderscores())
+$('.answer-field').append(`${createUnderscores()}`)
+
+//=========================================================
 //split alphabet string and push to alphabet array
 let splitAlphabet = function (letters) {
     for (let i = 0; i < letters.length; i++) {
@@ -37,18 +51,22 @@ let splitAlphabet = function (letters) {
 }
 splitAlphabet(alphabet)
 
+//=========================================================
+//function to compare clicked button to random word
 function checker(anything){
     let checkRandomWord = getRandomWord.split('')
+    console.log(checkRandomWord)
     for (let i = 0; i < checkRandomWord.length; i++){
-        if (anything === checkRandomWord[i]){
-            $('.answer-field').append(`${checkRandomWord[i]}`)
+        console.log(checkRandomWord[i])
+        if(anything === checkRandomWord[i]){
+            console.log('yay')
         } else {
-            console.log("letter is NOT in this word x amount of times")
+            console.log("nope")
         }
     }
 }
 
-
+//=========================================================
 //this get the id of the button on click
 //thank you james, you sweet hunk
 $(".btn").click(function(catfood){
@@ -59,8 +77,9 @@ $(".btn").click(function(catfood){
     $(`#${value}`).attr('disabled', true)
 })
 
+//=========================================================
 //this function gets the number of indexes for each letter
-
+//may be completely unnecessary
 let matchLetters = function (letters, word) {
     for (i = 0; i < letters.length; i++) {
         let count = 0
@@ -74,7 +93,7 @@ let matchLetters = function (letters, word) {
 }
 
 
-
+//=========================================================
 //split the random word into letters
 //not sure if needed at all
 
@@ -91,10 +110,10 @@ splitRandomWord(getRandomWord)
 
 
 
-
-//track life
-//when a button is clicked, subtract one life
-//when lives is less than one, alert "you lose" and buttons are disabled
+//=========================================================
+// track life
+// when a button is clicked, subtract one life
+// when lives is less than one, alert "you lose" and buttons are disabled
 // let lifeTracker = function () {
 //     $('.life-total').append(`${lives} lives remaining`)
 //     $('.btn-disabled').on('click', function () {
@@ -110,7 +129,7 @@ splitRandomWord(getRandomWord)
 
 
 
-
+//=========================================================
 // //reset button
 // const resetGame = function () {
 // }
