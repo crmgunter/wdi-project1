@@ -19,7 +19,6 @@ for (i = 0; i < getRandomWord.length; i++) {
 $('.answer-field').html(`<p class="lives">${underscores.join(" ")}</p>`)
 $('.reset-btn').append(`<button class="btn reset black button-style">New Game</button>`)
 
-
 //=========================================================
 //split alphabet string and push to alphabet array
 let splitAlphabet = function (letters) {
@@ -43,8 +42,6 @@ function checker(anything) {
         }
     }
 }
-
-
 
 //=========================================================
 //life tracker function
@@ -107,7 +104,6 @@ function lifeTracker(shitBalls) {
         $('.right-leg').html('\\')
     }
 }
-
 
 //=========================================================
 //this get the id of the button on click
