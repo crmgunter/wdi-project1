@@ -22,6 +22,11 @@ p {
     margin: 10px 10px;
 }
 
+.nav-wrapper {
+    opacity: .8;
+    height: 200px;
+}
+
 .life-total {
     margin: 30px auto;
     font-size: 20px;
