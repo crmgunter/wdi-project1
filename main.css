@@ -1,5 +1,4 @@
 body{
-    min-height: 100vh;
     background-color: rgb(74, 161, 236);
 }
 
@@ -23,8 +22,14 @@ p {
     margin: 10px 10px;
 }
 
+.life-total {
+    margin: 30px auto;
+    font-size: 20px;
+}
+
 .letters-container {
     text-align: center;
+    margin: 0 100px;
 }
 
 .answer-field {

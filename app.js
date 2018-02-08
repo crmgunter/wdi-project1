@@ -1,8 +1,8 @@
 //=========================================================
 //parallax
-$(document).ready(function(){
+$(document).ready(function () {
     $('.parallax').parallax();
-  });
+});
 
 
 //words to be guessed by user
@@ -26,9 +26,9 @@ console.log(randomWordArray)
 
 //=========================================================
 //function that subs underscores for letters
-    let underscores = []
-    for (i = 0; i < getRandomWord.length; i++){
-        underscores[i] = "_"
+let underscores = []
+for (i = 0; i < getRandomWord.length; i++) {
+    underscores[i] = "_"
 }
 
 $('.answer-field').html(`<p class="lives">${underscores.join(" ")}</p>`)
@@ -48,13 +48,13 @@ splitAlphabet(alphabet)
 //=========================================================
 //function to compare clicked button to random word
 //.split function can be muthafuckin removed
-function checker(anything){
+function checker(anything) {
     let rightGuess = 0
     let checkRandomWord = getRandomWord.split('')
     console.log(checkRandomWord)
-    for (let i = 0; i < checkRandomWord.length; i++){
-        if(anything === checkRandomWord[i]){
-            underscores[i]= anything
+    for (let i = 0; i < checkRandomWord.length; i++) {
+        if (anything === checkRandomWord[i]) {
+            underscores[i] = anything
             $('.answer-field').html(`<p class="lives">${underscores.join(" ")}</p>`)
             randomWordArray.push(underscores[i])
         }
@@ -70,21 +70,21 @@ function lifeTracker(shitBalls) {
     $('.life-total').html(`<p class="lives">You have ${lives} lives left.</p>`)
     let wrongGuess = 0
     let rightGuess = 0
-    for (let i = 0; i < getRandomWord.length; i++){
-        if (shitBalls !== getRandomWord[i]){
+    for (let i = 0; i < getRandomWord.length; i++) {
+        if (shitBalls !== getRandomWord[i]) {
             wrongGuess++
         }
     }
-    if (wrongGuess === getRandomWord.length){
+    if (wrongGuess === getRandomWord.length) {
         lives--
         $('.life-total').html(`<p class="lives">You have ${lives} lives left.</p>`)
-    } 
-    
-    if(randomWordArray.length === getRandomWord.length){
+    }
+
+    if (randomWordArray.length === getRandomWord.length) {
         $('.life-total').html(`<p class="lives">You fucking win!</p>`)
     }
 
-    if (lives < 1){
+    if (lives < 1) {
         $('.life-total').html(`<p class="lives">Game over</p>`)
         $('.alpha').addClass('disabled')
         $('.answer-field').html(getRandomWord)
@@ -95,7 +95,7 @@ function lifeTracker(shitBalls) {
 //=========================================================
 //this get the id of the button on click
 //thank you james, you sweet hunk
-$(".alpha").click(function(catfood){
+$(".alpha").click(function (catfood) {
     let value = catfood.target.id
     checker(value)
     lifeTracker(value)
@@ -103,14 +103,13 @@ $(".alpha").click(function(catfood){
     console.log(value)
     $(`#${value}`).attr('disabled', true)
 })
-$('.reset').on('click', function(){
+$('.reset').on('click', function () {
     location.reload()
 })
 
 
 //=========================================================
-//
-
+//hangman apparatus
 
 
 
