@@ -3,8 +3,6 @@
 const secretWords = ["banana", "frog", "bazooka", "boomerang", "seashells", "cheese", "octopus", "spade", "mailbox", "yesterday", "leader", "pompous", "friendly", "jello", "personalize"]
 let getRandomWord = secretWords[Math.floor(Math.random() * secretWords.length)]
 console.log(getRandomWord)
-// let printRandomWord = $('.answer-field').html(`${getRandomWord}`)
-
 let lives = 6
 $('.life-total').html(`<p class="lives">You have ${lives} lives left.</p>`)
 let alphabet = "abcdefghijklmnopqrstuvwxyz"
@@ -33,12 +31,10 @@ let splitAlphabet = function (letters) {
 splitAlphabet(alphabet)
 
 //=========================================================
-//function to compare clicked button to random word
-//.split function can be muthafuckin removed
+//function to compare clicked button to random word array
 function checker(anything) {
     let rightGuess = 0
-    let checkRandomWord = getRandomWord.split('')
-    console.log(checkRandomWord)
+    let checkRandomWord = getRandomWord
     for (let i = 0; i < checkRandomWord.length; i++) {
         if (anything === checkRandomWord[i]) {
             underscores[i] = anything
@@ -53,6 +49,8 @@ function checker(anything) {
 //=========================================================
 //life tracker function
 //change shitBalls to something else
+//measures right and wrong guesses
+//displays hangman parts, lives, and result messages
 function lifeTracker(shitBalls) {
     $('.life-total').html(`<p class="lives">You have ${lives} lives left.</p>`)
     let wrongGuess = 0
@@ -118,10 +116,11 @@ $(".alpha").click(function (catfood) {
     let value = catfood.target.id
     checker(value)
     lifeTracker(value)
-    // matchLetters(value, getRandomWord)
-    console.log(value)
     $(`#${value}`).attr('disabled', true)
 })
+
+//=========================================================
+//reset button click function
 $('.reset').on('click', function () {
     location.reload()
 })
