@@ -11,10 +11,22 @@ The user has 6 chances to get the correct word.
 If the user guesses the word before they run out of tries, they are given a notification that they have won the game.
 If the user does not guess the word in 6 tries, they are notified of a loss.
 
+Resources:
 
+Materialize - http://materializecss.com/
+jQuery - http://jquery.com/
+
+
+Trello:
 https://trello.com/b/fAQ9Uzm5/wdi-project-1
 
+"Wireframes":
 https://imgur.com/a/gmroS
 https://imgur.com/a/rO6gA
+https://imgur.com/a/lrcxh
 
-http://adoring-pike-c87cbf.bitballoon.com/
+Bitballoon link:
+http://zealous-darwin-5f0fa4.bitballoon.com/
+
+Version 2 will include mobile-friendly responsivity, categories of words for users to choose from,
+and a two-player mode.
