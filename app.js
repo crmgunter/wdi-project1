@@ -90,20 +90,6 @@ function lifeTracker(shitBalls) {
         $('.answer-field').html(getRandomWord)
     }
 }
-//=========================================================
-//this function gets the number of indexes for each letter
-//may be completely unnecessary
-// let matchLetters = function (letters, word) {
-//     for (i = 0; i < letters.length; i++) {
-//         let count = 0
-//         let eachIndex = word.indexOf(letters[i])
-//         while (eachIndex !== -1) {
-//             count++
-//             eachIndex = word.indexOf(letters[i], eachIndex + 1)
-//         }
-//         console.log(count)
-//     }
-// }
 
 
 //=========================================================
@@ -121,18 +107,9 @@ $('.reset').on('click', function(){
     location.reload()
 })
 
+
 //=========================================================
-//split the random word into letters
-//not sure if needed at all
-
-// let splitRandomWord = function (words) {
-//     for (let i = 0; i < words.length; i++) {
-//         randomWordArray.push(words[i])
-//     }
-// }
-// splitRandomWord(getRandomWord)
-
-
+//
 
 
 
