@@ -1,16 +1,16 @@
 body{
-    background-color: rgb(74, 161, 236);
+    background-image: url("https://orig00.deviantart.net/9f3f/f/2007/012/8/1/wrinkled_notebook_paper___3_by_djsoundwav.jpg");
+    background-size: cover;
+    font-family: 'Nanum Myeongjo', serif;
 }
 
 header {
     color: aliceblue;
-    font-family: 'Nanum Myeongjo', serif;
     margin: 0 100px;
 }
 
-p {
-    font-family: 'Nanum Myeongjo', serif;
-    color: white;
+container {
+    background-color: rgba(0, 0, 0, .5);
 }
 
 .button-style {
@@ -22,9 +22,8 @@ p {
     margin: 10px 10px;
 }
 
-.nav-wrapper {
+nav {
     opacity: .8;
-    height: 200px;
 }
 
 .life-total {
@@ -35,6 +34,8 @@ p {
 .letters-container {
     text-align: center;
     margin: 0 100px;
+    color: black;
+    opacity: 8;
 }
 
 .answer-field {
@@ -43,17 +44,26 @@ p {
     font-size: 50px;
 }
 
-.hangman-box {
+.lives {
+    color: black;
+    opacity: 8;
+}
+
+footer {
+    opacity: .8;
+}
+
+/* .hangman-box {
     height: 300px;
     width: 300px;
-    border: 2px solid white;
+    border: 2px solid black;
     margin: 20px auto;
 }
 
 .head {
     height: 50px;
     width: 50px;
-    border: 3px solid rgb(74, 161, 236);
+    border: 3px solid black;
     border-radius: 50%;
     margin: 20px auto;
     margin-bottom: 0;
@@ -62,7 +72,7 @@ p {
 .torso {
     height: 100px;
     width: 3px;
-    background-color: rgb(74, 161, 236);
+    background-color: black;
     margin: 0 auto;
 
 }
@@ -70,7 +80,7 @@ p {
 .left-arm {
     height: 3px;
     width: 50px;
-    background-color: rgb(74, 161, 236);
+    background-color: black;
     margin-top: -75px;
     margin-left: 100px;
 }
@@ -78,13 +88,13 @@ p {
 .right-arm {
     height: 3px;
     width: 50px;
-    background-color: rgb(74, 161, 236);
+    background-color: black;
     margin-top: -3px;
     margin-left: 150px;
 }
 
 .left-leg {
-    color: rgb(74, 161, 236);
+    color: black;
     font-weight: 200;
     font-size: 70px;
     margin-top: 45px;
@@ -92,14 +102,13 @@ p {
 }
 
 .right-leg {
-    color: rgb(74, 161, 236);
+    color: black;
     font-weight: 200;
     font-size: 70px;
     margin-left: 145px;
     margin-top: -105px;
 
-}
-
+} */
 
 
 

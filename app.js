@@ -1,9 +1,9 @@
 //=========================================================
 //parallax
-$(document).ready(function () {
+$(document).ready(function(){
     $('.parallax').parallax();
-});
-
+  });
+      
 
 //words to be guessed by user
 //=========================================================
@@ -16,16 +16,11 @@ console.log(getRandomWord)
 let lives = 6
 $('.life-total').html(`<p class="lives">You have ${lives} lives left.</p>`)
 let alphabet = "abcdefghijklmnopqrstuvwxyz"
-//prints alphabet string into an array
 let alphabetArray = []
-console.log(alphabetArray)
-
-//prints random word into array
 let randomWordArray = []
-console.log(randomWordArray)
 
 //=========================================================
-//function that subs underscores for letters
+//subs underscores for letters
 let underscores = []
 for (i = 0; i < getRandomWord.length; i++) {
     underscores[i] = "_"
@@ -82,6 +77,7 @@ function lifeTracker(shitBalls) {
 
     if (randomWordArray.length === getRandomWord.length) {
         $('.life-total').html(`<p class="lives">You fucking win!</p>`)
+        $('.alpha').addClass('disabled')
     }
 
     if (lives < 1) {
@@ -113,11 +109,3 @@ $('.reset').on('click', function () {
 
 
 
-//=========================================================
-//reset button
-const resetGame = function () {
-}
-resetGame()
-
-//where i left off: buttons need troubleshooting
-//reset button does nothing when clicked
