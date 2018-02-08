@@ -1,7 +1,7 @@
 body{
     background-image: url("https://orig00.deviantart.net/9f3f/f/2007/012/8/1/wrinkled_notebook_paper___3_by_djsoundwav.jpg");
     background-size: cover;
-    font-family: 'Nanum Myeongjo', serif;
+    font-family: 'Special Elite', cursive;
 }
 
 header {
@@ -9,9 +9,7 @@ header {
     margin: 0 100px;
 }
 
-container {
-    background-color: rgba(0, 0, 0, .5);
-}
+
 
 .button-style {
     text-align: center;
@@ -33,7 +31,7 @@ nav {
 
 .letters-container {
     text-align: center;
-    margin: 0 100px;
+    margin: 0 20px;
     color: black;
     opacity: 8;
 }
@@ -53,7 +51,7 @@ footer {
     opacity: .8;
 }
 
-/* .hangman-box {
+.hangman-box {
     height: 300px;
     width: 300px;
     border: 2px solid black;
@@ -63,52 +61,56 @@ footer {
 .head {
     height: 50px;
     width: 50px;
-    border: 3px solid black;
-    border-radius: 50%;
-    margin: 20px auto;
-    margin-bottom: 0;
+    font-size: 80px;
+    font-weight: 100;
+    margin: 0 auto;
 }
 
 .torso {
     height: 100px;
-    width: 3px;
-    background-color: black;
-    margin: 0 auto;
+    width: 25px;
+    font-weight: 300;
+    font-size: 90px;
+    margin: 5px auto;
 
 }
 
 .left-arm {
-    height: 3px;
+    height: 50px;
     width: 50px;
-    background-color: black;
-    margin-top: -75px;
-    margin-left: 100px;
+    font-size: 50px;
+    font-weight: 700;
+    margin-top: -100px;
+    margin-left: 115px;
+    transform: rotate(-15deg);
 }
 
 .right-arm {
-    height: 3px;
+    height: 50px;
     width: 50px;
-    background-color: black;
-    margin-top: -3px;
+    font-size: 50px;
+    font-weight: 800;
+    margin-top: -43px;
     margin-left: 150px;
+    transform: rotate(15deg);
 }
 
 .left-leg {
     color: black;
-    font-weight: 200;
+    font-weight: 500;
     font-size: 70px;
-    margin-top: 45px;
-    margin-left: 125px;
+    margin-top: 8px;
+    margin-left: 114px;
 }
 
 .right-leg {
     color: black;
-    font-weight: 200;
+    font-weight: 500;
     font-size: 70px;
-    margin-left: 145px;
+    margin-left: 143px;
     margin-top: -105px;
 
-} */
+}
 
 
 
