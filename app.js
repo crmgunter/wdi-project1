@@ -1,16 +1,8 @@
-//=========================================================
-//parallax
-$(document).ready(function(){
-    $('.parallax').parallax();
-  });
-      
-
 //words to be guessed by user
 //=========================================================
 const secretWords = ["banana", "frog", "bazooka", "boomerang", "seashells", "cheese", "octopus", "spade", "mailbox", "yesterday", "leader", "pompous", "friendly", "jello", "personalize"]
 let getRandomWord = secretWords[Math.floor(Math.random() * secretWords.length)]
 console.log(getRandomWord)
-// answer section with spaces for blank letters
 // let printRandomWord = $('.answer-field').html(`${getRandomWord}`)
 
 let lives = 6
@@ -83,7 +75,7 @@ function lifeTracker(shitBalls) {
             location.reload()
         })
 
-        
+
         $('.alpha').addClass('disabled')
     }
 
@@ -98,22 +90,22 @@ function lifeTracker(shitBalls) {
             location.reload()
         })
     }
-    if (lives < 6 && lives > 4){
+    if (lives < 6 && lives > 4) {
         $('.head').html('o')
     }
-    if (lives < 5 && lives > 3){
+    if (lives < 5 && lives > 3) {
         $('.torso').html('|')
     }
-    if (lives < 4 && lives > 2){
+    if (lives < 4 && lives > 2) {
         $('.left-arm').html('\\')
     }
-    if (lives < 3 && lives > 1){
+    if (lives < 3 && lives > 1) {
         $('.right-arm').html('/')
     }
-    if (lives < 2 && lives > 0){
+    if (lives < 2 && lives > 0) {
         $('.left-leg').html('/')
     }
-    if (lives < 1){
+    if (lives < 1) {
         $('.right-leg').html('\\')
     }
 }
@@ -133,18 +125,3 @@ $(".alpha").click(function (catfood) {
 $('.reset').on('click', function () {
     location.reload()
 })
-
-
-
-//=========================================================
-//hangman apparatus
-
-function stickman(){
-    let count = 0
-    for (let i = 0; i < lives.length; i++){
-        console.log(lives[i])
-
-    }
-}
-
-stickman()
