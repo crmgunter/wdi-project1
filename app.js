@@ -14,7 +14,7 @@ console.log(getRandomWord)
 // let printRandomWord = $('.answer-field').html(`${getRandomWord}`)
 
 let lives = 6
-$('.life-total').html(`You have ${lives} lives left.`)
+$('.life-total').html(`<p class="lives">You have ${lives} lives left.</p>`)
 let alphabet = "abcdefghijklmnopqrstuvwxyz"
 //prints alphabet string into an array
 let alphabetArray = []
@@ -31,7 +31,7 @@ console.log(randomWordArray)
         underscores[i] = "_"
 }
 
-$('.answer-field').html(underscores.join(" "))
+$('.answer-field').html(`<p class="lives">${underscores.join(" ")}</p>`)
 $('.reset-btn').append(`<button class="btn reset black button-style">Retry?</button>`)
 
 
@@ -55,7 +55,7 @@ function checker(anything){
     for (let i = 0; i < checkRandomWord.length; i++){
         if(anything === checkRandomWord[i]){
             underscores[i]= anything
-            $('.answer-field').html(underscores.join(" "))
+            $('.answer-field').html(`<p class="lives">${underscores.join(" ")}</p>`)
             randomWordArray.push(underscores[i])
         }
     }
@@ -67,7 +67,7 @@ function checker(anything){
 //life tracker function
 //change shitBalls to something else
 function lifeTracker(shitBalls) {
-    $('.life-total').html(`You have ${lives} lives left.`)
+    $('.life-total').html(`<p class="lives">You have ${lives} lives left.</p>`)
     let wrongGuess = 0
     let rightGuess = 0
     for (let i = 0; i < getRandomWord.length; i++){
@@ -77,15 +77,15 @@ function lifeTracker(shitBalls) {
     }
     if (wrongGuess === getRandomWord.length){
         lives--
-        $('.life-total').html(`You have ${lives} lives left.`)
+        $('.life-total').html(`<p class="lives">You have ${lives} lives left.</p>`)
     } 
     
     if(randomWordArray.length === getRandomWord.length){
-        $('.life-total').html("You fucking win!")
+        $('.life-total').html(`<p class="lives">You fucking win!</p>`)
     }
 
     if (lives < 1){
-        $('.life-total').html("Game over")
+        $('.life-total').html(`<p class="lives">Game over</p>`)
         $('.alpha').addClass('disabled')
         $('.answer-field').html(getRandomWord)
     }
