@@ -17,32 +17,33 @@
 
 
 
-
-    <nav>
-        <div class="nav-wrapper black">
-            <a href="#" class="brand-logo center">Welcome To Hangman</a>
-
-        </div>
-    </nav>
-
     <main>
+        <nav>
+            <div class="nav-wrapper black">
+                <a href="#" class="brand-logo center">Hangman</a>
+
+            </div>
+        </nav>
+
+
         <div class="container game-board">
-            <div class="container">
-                <div class="hangman-box">
-                    <div class="head"></div>
-                    <div class="torso"></div>
-                    <div class="left-arm"></div>
-                    <div class="right-arm"></div>
-                    <div class="left-leg"></div>
-                    <div class="right-leg"></div>
+            <div class="row">
+                <div class="col l5 s12">
+                    <div class="hangman-box">
+                        <div class="head"></div>
+                        <div class="torso"></div>
+                        <div class="left-arm"></div>
+                        <div class="right-arm"></div>
+                        <div class="left-leg"></div>
+                        <div class="right-leg"></div>
+                    </div>
                 </div>
                 <div class="life-total center"></div>
-                <div class="container">
-                    <div class="letters-container"></div>
-                </div>
                 <div class="answer-field"></div>
-                <div class="reset-btn center"></div>
+                <div class="letters-container"></div>
             </div>
+            <div class="reset-btn"></div>
+        </div>
     </main>
 
     <footer class="page-footer black">

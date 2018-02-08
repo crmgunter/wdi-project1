@@ -27,7 +27,7 @@ for (i = 0; i < getRandomWord.length; i++) {
 }
 
 $('.answer-field').html(`<p class="lives">${underscores.join(" ")}</p>`)
-$('.reset-btn').append(`<button class="btn reset black button-style">Retry?</button>`)
+$('.reset-btn').append(`<button class="btn reset black button-style">New Game</button>`)
 
 
 //=========================================================
@@ -76,7 +76,14 @@ function lifeTracker(shitBalls) {
     }
 
     if (randomWordArray.length === getRandomWord.length) {
-        $('.life-total').html(`<p class="lives">You fucking win!</p>`)
+        $('.hangman-box').html(`
+        <div class="lives green-text win">YOU FUCKING WIN!</div>
+        <button class="btn reset black button-style">Play again?</button>`)
+        $('.reset').on('click', function () {
+            location.reload()
+        })
+
+        
         $('.alpha').addClass('disabled')
     }
 
@@ -84,6 +91,30 @@ function lifeTracker(shitBalls) {
         $('.life-total').html(`<p class="lives">Game over</p>`)
         $('.alpha').addClass('disabled')
         $('.answer-field').html(getRandomWord)
+        $('.hangman-box').html(`
+        <div class="red-text fail">FAIL</div>
+        <button class="btn reset black button-style">Play again?</button>`)
+        $('.reset').on('click', function () {
+            location.reload()
+        })
+    }
+    if (lives < 6 && lives > 4){
+        $('.head').html('o')
+    }
+    if (lives < 5 && lives > 3){
+        $('.torso').html('|')
+    }
+    if (lives < 4 && lives > 2){
+        $('.left-arm').html('\\')
+    }
+    if (lives < 3 && lives > 1){
+        $('.right-arm').html('/')
+    }
+    if (lives < 2 && lives > 0){
+        $('.left-leg').html('/')
+    }
+    if (lives < 1){
+        $('.right-leg').html('\\')
     }
 }
 
@@ -104,8 +135,16 @@ $('.reset').on('click', function () {
 })
 
 
+
 //=========================================================
 //hangman apparatus
 
+function stickman(){
+    let count = 0
+    for (let i = 0; i < lives.length; i++){
+        console.log(lives[i])
 
+    }
+}
 
+stickman()

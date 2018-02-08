@@ -2,13 +2,8 @@ body{
     background-image: url("https://orig00.deviantart.net/9f3f/f/2007/012/8/1/wrinkled_notebook_paper___3_by_djsoundwav.jpg");
     background-size: cover;
     font-family: 'Special Elite', cursive;
+    min-height: 100vh;
 }
-
-header {
-    color: aliceblue;
-    margin: 0 100px;
-}
-
 
 
 .button-style {
@@ -20,9 +15,27 @@ header {
     margin: 10px 10px;
 }
 
+.reset-btn {
+    margin: 30px 0 0 50px;
+}
+
+.row {
+    margin-top: 40px;
+}
+
 nav {
     opacity: .8;
 }
+
+.letters {
+    margin-top: 20px;
+}
+
+.game-board {
+    min-height: 100vh;
+    width: 100%;
+}
+
 
 .life-total {
     margin: 30px auto;
@@ -31,9 +44,13 @@ nav {
 
 .letters-container {
     text-align: center;
-    margin: 0 20px;
+    margin: 0 50px;
     color: black;
     opacity: 8;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
 }
 
 .answer-field {
@@ -51,11 +68,30 @@ footer {
     opacity: .8;
 }
 
+
+
+/*STICKFIGURE GUY*/
+
 .hangman-box {
     height: 300px;
     width: 300px;
     border: 2px solid black;
+    border-radius: 4px;
     margin: 20px auto;
+    display: flex;
+    flex-direction: column;
+}
+
+.fail {
+    font-size: 70px;
+    margin: auto;
+    text-align: center;
+}
+
+.win {
+    font-size: 40px;
+    margin: auto;
+    text-align: center;
 }
 
 .head {
