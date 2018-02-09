@@ -79,15 +79,17 @@ footer {
 }
 
 .fail {
-    font-size: 70px;
+    font-size: 40px;
     margin: auto;
     text-align: center;
+    transform: rotate(-20deg)
 }
 
 .win {
     font-size: 40px;
     margin: auto;
     text-align: center;
+    transform: rotate(-20deg)
 }
 
 .head {

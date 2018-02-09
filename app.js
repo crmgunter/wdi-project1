@@ -64,7 +64,7 @@ function lifeTracker(shitBalls) {
 
     if (randomWordArray.length === getRandomWord.length) {
         $('.hangman-box').html(`
-        <div class="lives green-text win">YOU FUCKING WIN!</div>
+        <div class="lives green-text win">A+ PASS</div>
         <button class="btn reset black button-style">Play again?</button>`)
         $('.reset').on('click', function () {
             location.reload()
@@ -79,7 +79,7 @@ function lifeTracker(shitBalls) {
         $('.alpha').addClass('disabled')
         $('.answer-field').html(getRandomWord)
         $('.hangman-box').html(`
-        <div class="red-text fail">FAIL</div>
+        <div class="red-text fail">F- FAIL</div>
         <button class="btn reset black button-style">Play again?</button>`)
         $('.reset').on('click', function () {
             location.reload()
