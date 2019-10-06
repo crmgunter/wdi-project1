@@ -8,7 +8,6 @@ $('.life-total').html(`<p class="lives">You have ${lives} lives left.</p>`)
 let alphabet = "abcdefghijklmnopqrstuvwxyz"
 let alphabetArray = []
 let randomWordArray = []
-
 //=========================================================
 //subs underscores for letters
 let underscores = []
@@ -32,7 +31,6 @@ splitAlphabet(alphabet)
 //=========================================================
 //function to compare clicked button to random word array
 function checker(anything) {
-    let rightGuess = 0
     let checkRandomWord = getRandomWord
     for (let i = 0; i < checkRandomWord.length; i++) {
         if (anything === checkRandomWord[i]) {
@@ -65,7 +63,7 @@ function lifeTracker(shitBalls) {
     if (randomWordArray.length === getRandomWord.length) {
         $('.hangman-box').html(`
         <div class="lives green-text win">A+ PASS</div>
-        <button class="btn reset black button-style">Play again?</button>`)
+        <button class="btn reset green button-style">Play again?</button>`)
         $('.reset').on('click', function () {
             location.reload()
         })
@@ -80,7 +78,7 @@ function lifeTracker(shitBalls) {
         $('.answer-field').html(getRandomWord)
         $('.hangman-box').html(`
         <div class="red-text fail">F- FAIL</div>
-        <button class="btn reset black button-style">Play again?</button>`)
+        <button class="btn reset red button-style">Play again?</button>`)
         $('.reset').on('click', function () {
             location.reload()
         })
@@ -106,10 +104,10 @@ function lifeTracker(shitBalls) {
 }
 
 //=========================================================
-//this get the id of the button on click
+//this gets the id of the button on click
 //thank you james, you sweet hunk
-$(".alpha").click(function (catfood) {
-    let value = catfood.target.id
+$(".alpha").click(function (event) {
+    let value = event.target.id
     checker(value)
     lifeTracker(value)
     $(`#${value}`).attr('disabled', true)
@@ -120,3 +118,9 @@ $(".alpha").click(function (catfood) {
 $('.reset').on('click', function () {
     location.reload()
 })
+
+// $('.test').on('click', function () {
+//     $('.test').css('background', 'green')
+//     function () { $('.test').mouseout('background', 'blue') }
+    
+// })
