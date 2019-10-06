@@ -1,3 +1,5 @@
+const $ = require('jquery')
+
 //words to be guessed by user
 //=========================================================
 const secretWords = ["banana", "frog", "bazooka", "boomerang", "seashells", "cheese", "octopus", "spade", "mailbox", "yesterday", "leader", "pompous", "friendly", "jello", "personalize"]
